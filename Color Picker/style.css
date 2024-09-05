@@ -1,10 +1,100 @@
-body{
+/* General styles */
+body {
+	font-family: 'Roboto', sans-serif;
+	background-color: #f0f4f8; /* A soft background */
+	color: #333;
 	text-align: center;
+	margin: 0;
+	padding: 40px 20px;
+	box-sizing: border-box;
 }
 
-div{
-	height: 100px;
+h1 {
+	font-size: 3em;
+	color: #6200ea; /* Main title color */
+	margin-bottom: 20px;
+}
+
+h3 {
+	font-size: 1.5em;
+	color: #444;
+	margin-bottom: 30px;
+}
+
+/* Button Styles */
+button {
+	background-color: #6200ea;
+	color: white;
+	padding: 15px 30px;
+	font-size: 1.2em;
+	border: none;
+	border-radius: 5px;
+	cursor: pointer;
+	transition: background-color 0.3s ease, transform 0.2s ease;
+	margin: 20px;
+	box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Subtle shadow for button */
+}
+
+button:hover {
+	background-color: #3700b3;
+	transform: translateY(-2px); /* Adds lift effect */
+}
+
+/* Color Display Styles */
+div {
+	height: 150px;
 	width: 400px;
-	border: 2px solid black;
-	margin: auto;
+	border: 2px solid #333;
+	border-radius: 15px;
+	margin: 20px auto;
+	line-height: 150px;
+	font-size: 1.5em;
+	font-weight: bold;
+	color: white;
+	transition: background-color 0.5s ease, transform 0.3s ease;
+	box-shadow: 0 4px 10px rgba(0, 0, 0, 0.15); /* Shadow for the color box */
+}
+
+div:hover {
+	transform: scale(1.05);
+}
+
+/* RGB & Hex Code Styles */
+#rgbCode, #hexCode, #colorDetails {
+	font-size: 1.2em;
+	margin-top: 15px;
+	color: #6200ea;
+}
+
+/* New styles for color information */
+#colorDetails {
+	font-style: italic;
+	color: #333;
+	margin-top: 10px;
+	padding-top: 10px;
+	border-top: 1px solid #ddd;
+}
+
+/* Mobile Responsiveness */
+@media (max-width: 600px) {
+	div {
+		width: 90%; /* Adjust width for smaller screens */
+	}
+
+	button {
+		width: 80%;
+		padding: 12px 20px;
+	}
+
+	h1 {
+		font-size: 2.5em;
+	}
+
+	h3 {
+		font-size: 1.3em;
+	}
+
+	#rgbCode, #hexCode, #colorDetails {
+		font-size: 1.1em;
+	}
 }
