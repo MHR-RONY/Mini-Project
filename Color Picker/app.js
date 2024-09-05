@@ -62,3 +62,4 @@ function getColorDetails(rgb) {
 
 	return `This is a ${brightnessLevel} and ${colorTemperature} color. ${usage}`;
 }
+
