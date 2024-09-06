@@ -1,19 +1,377 @@
+body {
+    background-color: #0172ad;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    height: 100vh;
+    margin: 0;
+    padding: 0;
+}
+
+.container {
+    width: 279.66px;
+    height: 198px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    background-color: white;
+    margin: 10px;
+    border-radius: 10px;
+}
+
+.loader-name {
+    margin-top: 10px;
+    font-size: 16px;
+    color: #0172ad;
+}
+
 .loader {
-	border: 16px solid #f3f3f3;
-	border-top: 16px solid goldenrod;
-	border-radius: 50%;
-	width: 120px;
-	height: 120px;
-	margin: 30px 0px 0px 70px;
-	animation: spin 2s linear infinite;
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+}
 
-	}
-	@keyframes spin {
-		0% {
-		transform: rotate(0deg);
-		}
+/* Loader 1 */
+.loader1 {
+    border: 8px solid;
+    border-color: #000 transparent;
+    animation: rotate-half-turn 1s infinite;
+}
 
-		100% {
-		transform: rotate(360deg);
-		}
-		}
+@keyframes rotate-half-turn {
+    to {
+        transform: rotate(0.5turn);
+    }
+}
+
+/* Loader 2 */
+.loader2 {
+    border: 8px solid lightblue;
+    border-right-color: orange;
+    animation: rotate-full-turn 1s infinite linear;
+}
+
+@keyframes rotate-full-turn {
+    to {
+        transform: rotate(1turn);
+    }
+}
+
+/* Loader 3 */
+.loader3 {
+    padding: 8px;
+    background: #25b09b;
+    --_m: conic-gradient(transparent 10%, #000), linear-gradient(#000 0 0) content-box;
+    -webkit-mask: var(--_m);
+    mask: var(--_m);
+    -webkit-mask-composite: source-out;
+    mask-composite: subtract;
+    animation: rotate-full-turn 1s infinite linear;
+}
+
+/* Loader 4 */
+.loader4 {
+    --b: 8px;
+    padding: 1px;
+    background: conic-gradient(transparent 10%, #f03355) content-box;
+    -webkit-mask: repeating-conic-gradient(transparent 0deg, #000 1deg 20deg, transparent 21deg 36deg), radial-gradient(farthest-side, transparent calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation: rotate-full-turn 1s infinite steps(10);
+}
+
+/* Loader 5 */
+.loader5 {
+    --b: 8px;
+    background: #514b82;
+    -webkit-mask: repeating-conic-gradient(transparent 0deg, #000 1deg 70deg, transparent 71deg 90deg), radial-gradient(farthest-side, transparent calc(100% - var(--b) - 1px), #000 calc(100% - var(--b)));
+    -webkit-mask-composite: destination-in;
+    mask-composite: intersect;
+    animation: rotate-half-turn 1s infinite;
+}
+
+/* Loader 6 */
+.loader6 {
+    padding: 3px;
+    background: radial-gradient(farthest-side, #ffa516 95%, transparent) 50% 0/12px 12px no-repeat, radial-gradient(farthest-side, transparent calc(100% - 5px), #ffa516 calc(100% - 4px)) content-box;
+    animation: rotate-full-turn 2s infinite;
+}
+
+/* Loader 7 */
+.loader7 {
+    --_c: no-repeat radial-gradient(farthest-side, #25b09b 92%, transparent);
+    background: var(--_c) top, var(--_c) left, var(--_c) right, var(--_c) bottom;
+    background-size: 12px 12px;
+    animation: rotate-half-turn 1s infinite;
+}
+
+/* Loader 8 */
+.loader8 {
+    color: #f03355;
+    --_c: no-repeat radial-gradient(farthest-side, currentColor 92%, transparent);
+    background: var(--_c) 50% 0/12px 12px, var(--_c) 50% 100%/12px 12px, var(--_c) 100% 50%/12px 12px, var(--_c) 0 50%/12px 12px, var(--_c) 50% 50%/12px 12px, conic-gradient(from 90deg at 4px 4px, transparent 90deg, currentColor 0) -4px -4px/calc(50% + 2px) calc(50% + 2px);
+    animation: rotate-half-turn 1s infinite linear;
+}
+
+/* Loader 9 */
+.loader9 {
+    color: #18a4c7;
+    border-radius: 50%;
+    display: grid;
+    background: conic-gradient(from 90deg at 4px 4px, transparent 90deg, currentColor 0) -4px -4px/calc(50% + 2px) calc(50% + 2px), radial-gradient(farthest-side, currentColor 6px, transparent 7px calc(100% - 6px), currentColor calc(100% - 5px)) no-repeat;
+    animation: rotate-half-turn 2s infinite linear;
+}
+
+/* Styles for loaders 1-9 remain unchanged */
+
+/* Loader 10 */
+.loader10 {
+    width: 50px;
+    aspect-ratio: 1;
+    color: #14d8dc;
+    border-radius: 50%;
+    display: grid;
+    background:
+      conic-gradient(from 90deg at 4px 4px, #0000 90deg, currentColor 0)
+      -4px -4px/calc(50% + 2px) calc(50% + 2px),
+      radial-gradient(farthest-side, currentColor 6px, #0000 7px calc(100% - 6px), currentColor calc(100% - 5px)) no-repeat;
+    animation: l10 2s infinite linear;
+    position: relative;
+  }
+  .loader10:before {
+    content: "";
+    border-radius: inherit;
+    background: inherit;
+    transform: rotate(45deg);
+  }
+  @keyframes l10 {to{transform: rotate(.5turn)}}
+
+  /* Loader 11 */
+  .loader11 {
+    width: 50px;
+    aspect-ratio: 1;
+    color: #004f90;
+    border-radius: 50%;
+    display: grid;
+    background:
+      conic-gradient(from 90deg at 4px 4px, #0000 90deg, currentColor 0)
+      -4px -4px/calc(50% + 2px) calc(50% + 2px),
+      radial-gradient(farthest-side, currentColor 6px, #0000 7px calc(100% - 6px), currentColor calc(100% - 5px)) no-repeat;
+    animation: l10 2s infinite linear;
+    position: relative;
+  }
+  .loader11:before {
+    content: "";
+    border-radius: inherit;
+    background: inherit;
+    transform: rotate(45deg);
+  }
+
+  /* Loader 12 */
+  .loader12 {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+  }
+  .loader12::before,
+  .loader12::after {
+    content: "";
+    grid-area: 1/1;
+    --c: no-repeat radial-gradient(farthest-side, #25b09b 92%, transparent);
+    background:
+      var(--c) 50%  0,
+      var(--c) 50%  100%,
+      var(--c) 100% 50%,
+      var(--c) 0    50%;
+    background-size: 12px 12px;
+    animation: l12 1s infinite;
+  }
+  .loader12::before {
+    margin: 4px;
+    filter: hue-rotate(45deg);
+    background-size: 8px 8px;
+    animation-timing-function: linear;
+  }
+  @keyframes l12 {
+    100% {transform: rotate(.5turn);}
+  }
+
+  /* Loader 13 */
+.loader13 {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: radial-gradient(farthest-side, #ffa516 94%, transparent) top/8px 8px no-repeat,
+                conic-gradient(#0000 30%, #ffa516);
+    -webkit-mask: radial-gradient(farthest-side, transparent calc(100% - 8px), #000 0);
+    animation: rotate-full-turn 1s infinite linear;
+}
+
+@keyframes rotate-full-turn {
+    100% {
+        transform: rotate(1turn);
+    }
+}
+
+
+  /* Loader 14 */
+  .loader14 {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    animation: l14 4s infinite;
+  }
+  .loader14::before,
+  .loader14::after {
+    content: "";
+    grid-area: 1/1;
+    border: 8px solid;
+    border-radius: 50%;
+    border-color: red red transparent transparent;
+    mix-blend-mode: darken;
+    animation: l14 1s infinite linear;
+  }
+  .loader14::after {
+    border-color: transparent transparent blue blue;
+    animation-direction: reverse;
+  }
+  @keyframes l14 {
+    100% {transform: rotate(1turn);}
+  }
+
+  /* Loader 15 */
+  .loader15 {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    border-right-color: #25b09b;
+    animation: l15 1s infinite linear;
+  }
+  .loader15::before,
+  .loader15::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+    animation: l15 2s infinite;
+  }
+  .loader15::after {
+    margin: 8px;
+    animation-duration: 3s;
+  }
+  @keyframes l15 {
+    100% {transform: rotate(1turn);}
+  }
+
+  /* Loader 16 */
+  .loader16 {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    border: 4px solid transparent;
+    border-radius: 50%;
+    border-color: #ccc transparent;
+    animation: l16 1s infinite linear;
+  }
+  .loader16::before,
+  .loader16::after {
+    content: "";
+    grid-area: 1/1;
+    margin: 2px;
+    border: inherit;
+    border-radius: 50%;
+  }
+  .loader16::before {
+    border-color: #f03355 transparent;
+    animation: inherit;
+    animation-duration: .5s;
+    animation-direction: reverse;
+  }
+  .loader16::after {
+    margin: 8px;
+  }
+  @keyframes l16 {
+    100% {transform: rotate(1turn);}
+  }
+
+  /* Loader 17 */
+  .loader17 {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    border: 8px solid #514b82;
+    animation:
+      l20-1 0.8s infinite linear alternate,
+      l20-2 1.6s infinite linear;
+  }
+  @keyframes l20-1 {
+    0%    {clip-path: polygon(50% 50%,0       0,  50%   0%,  50%    0%, 50%    0%, 50%    0%, 50%    0% )}
+    12.5% {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100%   0%, 100%   0%, 100%   0% )}
+    25%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 100% 100%, 100% 100% )}
+    50%   {clip-path: polygon(50% 50%,0       0,  50%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+    62.5% {clip-path: polygon(50% 50%,100%    0, 100%   0%,  100%   0%, 100% 100%, 50%  100%, 0%   100% )}
+    75%   {clip-path: polygon(50% 50%,100% 100%, 100% 100%,  100% 100%, 100% 100%, 50%  100%, 0%   100% )}
+    100%  {clip-path: polygon(50% 50%,50%  100%,  50% 100%,   50% 100%,  50% 100%, 50%  100%, 0%   100% )}
+  }
+  @keyframes l20-2 {
+    0%    {transform: scaleY(1)  rotate(0deg);}
+    49.99% {transform: scaleY(1)  rotate(135deg);}
+    50%   {transform: scaleY(-1) rotate(0deg);}
+    100%  {transform: scaleY(-1) rotate(-135deg);}
+  }
+
+  /* Loader 18 */
+  .loader18 {
+    width: 50px;
+    aspect-ratio: 1;
+    border-radius: 50%;
+    background: repeating-conic-gradient(#000 0 90deg, #ccc 0 180deg);
+    animation: l21 1s infinite linear;
+  }
+  @keyframes l21 {
+    100% {transform: rotate(.5turn);}
+  }
+
+  /* Loader 19 */
+  .loader19 {
+    width: 50px;
+    aspect-ratio: 1;
+    display: grid;
+    -webkit-mask: conic-gradient(from 15deg, transparent, #000);
+    animation: l26 1s infinite steps(12);
+  }
+  .loader19,
+  .loader19:before,
+  .loader19:after {
+    background:
+      radial-gradient(closest-side at 50% 12.5%, #f03355 96%, transparent) 50% 0/20% 80% repeat-y,
+      radial-gradient(closest-side at 12.5% 50%, #f03355 96%, transparent) 0 50%/80% 20% repeat-x;
+  }
+  .loader19:before,
+  .loader19:after {
+    content: "";
+    grid-area: 1/1;
+    transform: rotate(30deg);
+  }
+  .loader19:after {
+    transform: rotate(60deg);
+  }
+  @keyframes l26 {
+    100% {transform: rotate(1turn);}
+  }
+
+  /* Loader 20 remains unchanged */
+
+
+/* Loader 20 */
+.loader20 {
+    --_c: no-repeat linear-gradient(orange 0 0) 50%;
+    background: var(--_c)/100% 50%, var(--_c)/50% 100%;
+    border-radius: 50%;
+    animation: rotate-full-turn 2s infinite linear;
+}
