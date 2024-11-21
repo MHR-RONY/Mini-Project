@@ -1,0 +1,54 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Mini Chat System</title>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Poppins:wght@300;400;600&display=swap"
+      rel="stylesheet"
+    />
+    <link rel="stylesheet" href="style.css" />
+  </head>
+  <body>
+    <header class="header">
+      <h1>Mini Chat System</h1>
+      <form method="get" action="/chats/new">
+        <button class="btn primary-btn">New Chat</button>
+      </form>
+    </header>
+
+    <main class="chat-container">
+      <% for (let chat of chats) { %>
+      <div class="chat-card">
+        <!-- Chat sender details -->
+        <p class="chat-meta">From: <strong><%= chat.from %></strong></p>
+
+        <!-- Chat message -->
+        <div class="chat-message">
+          <p><%= chat.msg %></p>
+        </div>
+
+        <!-- Chat action buttons -->
+        <div class="button-container">
+          <!-- Delete button aligned to the left -->
+          <form method="POST" action="/chats/<%= chat._id %>/?_method=DELETE">
+            <button class="btn danger-btn">Delete</button>
+          </form>
+          <!-- Edit button aligned to the right -->
+          <form method="GET" action="/chats/<%= chat._id %>/edit">
+            <button class="btn secondary-btn">Edit</button>
+          </form>
+        </div>
+
+        <!-- Chat receiver details -->
+        <p class="chat-meta">To: <strong><%= chat.to %></strong></p>
+        <p class="chat-time">
+          Sent at: <%= chat.created_at.toString().split(" ")[4] %> on <%=
+          chat.created_at.toString().split(" ").slice(0, 4).join("-") %>
+        </p>
+      </div>
+      <% } %>
+    </main>
+  </body>
+</html>

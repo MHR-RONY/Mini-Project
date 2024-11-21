@@ -1,0 +1,217 @@
+/* General styles */
+body {
+  font-family: 'Poppins', sans-serif;
+  background-color: #f3f4f6;
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.6;
+}
+
+/* Header styles */
+header {
+  background-color: #f5f7fa; /* Light background for the header */
+  color: #333;
+  padding: 2rem;
+  text-align: center;
+  box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+header h1 {
+  margin: 0;
+  font-weight: 700;
+  font-size: 2.5rem;
+  text-transform: uppercase;
+  letter-spacing: 1px;
+  background: linear-gradient(90deg, #0078ff, #00c6ff);
+  background-clip: text;
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+/* Primary button (New Chat) */
+.btn.primary-btn {
+  background: linear-gradient(90deg, #ff7eb3, #ff758c); /* Pink gradient */
+  color: #fff;
+  padding: 0.8rem 2rem;
+  border-radius: 25px;
+  font-size: 1.2rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 10px rgba(255, 117, 140, 0.3);
+  border: none;
+  cursor: pointer;
+}
+
+.btn.primary-btn:hover {
+  transform: translateY(-2px); /* Lift the button slightly */
+  background: linear-gradient(90deg, #ff758c, #ff5a75); /* Slightly darker pink gradient */
+  box-shadow: 0 6px 15px rgba(255, 117, 140, 0.5); /* Stronger shadow on hover */
+}
+
+/* Chat container */
+.chat-container {
+  padding: 2rem;
+  max-width: 900px;
+  margin: 2rem auto;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+.chat-card {
+  display: flex;
+  flex-direction: column;
+  padding: 1.5rem;
+  margin-bottom: 1.5rem;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Chat card hover effect */
+.chat-card:hover {
+  transform: translateY(-5px); /* Slight lift effect */
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2); /* Stronger shadow */
+  border: 1px solid #0078ff; /* Add a blue border on hover */
+  transition: all 0.3s ease; /* Smooth transition */
+  background: linear-gradient(90deg, #f5f5f5, #e0f7ff); /* Subtle gradient background */
+}
+
+.chat-meta {
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #555;
+  margin-bottom: 0.5rem;
+}
+
+.chat-message {
+  padding: 1rem 1.5rem;
+  border-radius: 15px;
+  font-size: 1rem;
+  line-height: 1.6;
+  margin: 0.5rem 0;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+  color: #f3f3f3;
+  background: linear-gradient(90deg, #8e44ad, #e91e63, #2196f3);
+}
+
+.chat-time {
+  font-size: 0.9rem;
+  color: #999;
+  text-align: left;
+  margin-top: 0.5rem;
+}
+
+/* Edit form container */
+.edit-container,
+.new-chat-container {
+  padding: 2rem;
+  max-width: 800px;
+  margin: 2rem auto;
+  background: #ffffff;
+  border-radius: 15px;
+  box-shadow: 0 3px 8px rgba(0, 0, 0, 0.1);
+  transition: all 0.3s ease;
+}
+
+/* Hover effect for form containers */
+.edit-container:hover,
+.new-chat-container:hover {
+  transform: translateY(-5px);
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.2);
+  border: 1px solid #0078ff;
+  background: linear-gradient(90deg, #f5f5f5, #e0f7ff);
+}
+
+/* Form inside the containers */
+.edit-form,
+.new-chat-form {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+}
+
+/* Input field */
+.input-field {
+  width: 100%;
+  padding: 1rem;
+  margin-bottom: 1rem;
+  border-radius: 10px;
+  border: 1px solid #ddd;
+  font-size: 1rem;
+  background-color: #f9f9f9;
+  box-shadow: 0 2px 5px rgba(0, 0, 0, 0.1);
+}
+
+.input-field:focus {
+  border-color: #0078ff;
+  outline: none;
+  background-color: #e0f7ff;
+  transition: all 0.3s ease;
+}
+
+.input-field::placeholder {
+  color: #bbb;
+}
+
+/* Button container */
+.button-container {
+  display: flex;
+  justify-content: space-between; /* Space between buttons */
+  align-items: center;
+  margin-top: 1rem;
+}
+
+/* Buttons */
+.btn {
+  display: inline-block;
+  padding: 0.8rem 1.5rem;
+  font-size: 1rem;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-weight: bold;
+  text-align: center;
+  text-decoration: none;
+  transition: all 0.3s ease-in-out;
+}
+
+/* Secondary button (Save Changes) */
+.btn.secondary-btn {
+  background: linear-gradient(90deg, #0078ff, #0056b3); /* Blue gradient */
+  color: #fff;
+}
+
+.btn.secondary-btn:hover {
+  transform: translateY(-2px) scale(1.1); /* Lift on hover */
+  background: linear-gradient(90deg, #0056b3, #003a80); /* Darker blue gradient */
+  box-shadow: 0 4px 10px rgba(0, 86, 179, 0.3); /* Shadow on hover */
+}
+
+/* Danger button (Delete) */
+.btn.danger-btn {
+  background: linear-gradient(90deg, #ff5252, #ff1744); /* Red gradient */
+  color: #fff;
+}
+
+.btn.danger-btn:hover {
+  transform: translateY(-2px) scale(1.1); /* Lift on hover */
+  background: linear-gradient(90deg, #ff1744, #d50000); /* Darker red gradient */
+  box-shadow: 0 4px 10px rgba(255, 23, 68, 0.3); /* Shadow on hover */
+}
+
+/* Scrollbar styles */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #ff758c;
+  border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background-color: #ff7eb3;
+}
